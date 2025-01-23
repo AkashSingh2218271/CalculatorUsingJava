@@ -24,36 +24,37 @@ class Calculator {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
 
-        int ch = 1, num1 = 0, num2 = 0;
+        int num1 = 0, num2 = 0;
+        char ch = ' ';
 
-        while (ch != 0) {
-            System.out.println("Menu : \nEnter 1 for addition\nEnter 2 for subtraction\nEnter 3 for multiplication\nEnter 4 for division\nEnter 5 for modulus\nEnter 0 for exit\n");
+        while (ch != '#') {
+            System.out.println("Menu : \nEnter + for addition\nEnter - for subtraction\nEnter * for multiplication\nEnter / for division\nEnter % for modulus\nEnter # for exit\n");
             System.out.println("Enter your choice ");
-            ch = sc.nextInt();
+            ch = sc.next().charAt(0);
 
-            if (ch != 0) {
+            if (ch != '#') {
                 System.out.println("Enter value of num1 and num2 respectively ");
                 num1 = sc.nextInt();
                 num2 = sc.nextInt();
             }
 
             switch (ch) {
-                case 1:
+                case '+':
                     System.out.println("Addtion of " + num1 + " and " + num2 + " is " + add(num1, num2));
                     break;
-                case 2:
+                case '-':
                     System.out.println("Subtraction of " + num1 + " and " + num2 + " is " + sub(num1, num2));
                     break;
-                case 3:
+                case '*':
                     System.out.println("Multiplication of " + num1 + " and " + num2 + " is " + multiply(num1, num2));
                     break;
-                case 4:
+                case '/':
                     System.out.println("Division of " + num1 + " and " + num2 + " is " + div(num1, num2));
                     break;
-                case 5:
+                case '%':
                     System.out.println("Modulus of " + num1 + " and " + num2 + " is " + mod(num1, num2));
                     break;
-                case 0:
+                case '#':
                     System.out.println("Exiting the calculator.");
                     break;
                 default:
